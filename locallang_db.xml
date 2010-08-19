@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+	<meta type="array">
+		<type>database</type>
+		<description>Language labels for database tables/fields belonging to extension 't3notes_search'</description>
+	</meta>
+	<data type="array">
+		<languageKey index="default" type="array">
+			<label index="pages.tx_t3notessearch_search_key">Lotus Notes Key</label>
+		</languageKey>
+		<languageKey index="de" type="array">
+			<label index="pages.tx_t3notessearch_search_key">Lotus Notes Schlüssel</label>
+		</languageKey>
+	</data>
+</T3locallang>

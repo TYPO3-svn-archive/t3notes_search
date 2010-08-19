@@ -1,0 +1,15 @@
+
+  # cat=basic//10; type=text; label= Search detail base url: URL for the search detail content links
+searchDetailBaseUrl = 
+
+  # cat=basic//10; type=text; label= Search detail replace list: List of HTML attributes to replace
+searchDetailReplaceList = src=",url=",href="
+
+  # cat=basic//10; type=text; label= Search database POST: name of the POST variable which chooses the Lotus Notes database
+searchDatabaseVariable = SearchableView1
+
+  # cat=basic//10; type=text; label= Database selectboxes wrap: Wrap araound the selectboxes
+selectboxWrapOuter = <div class="searchableDatabaseContainer"><form name="searchableDatabaseForm" id="searchableDatabaseForm">|</form></div>
+
+  # cat=basic//10; type=text; label= Database selectboxes item onclick: value for the onclick attribute of the selectbox item
+selectboxItemOnClick = modularsearchInvoke($('modularSearchKeyword').value, tx_modularsearch_modules[4-1], 4, tx_modularsearch_modules[4-1][3],0,'selectedDatabases', $('t3notesSearchSearchableDatabases').value);

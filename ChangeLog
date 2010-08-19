@@ -1,0 +1,15 @@
+2010-08-12 Sonja Scholz  <ss@cabag.ch>
+	* Version 0.0.4
+	* changed encode function - don't use cabag_phpoxy for the detailview links - not needed, just add the right base url
+
+2010-07-09 Sonja Scholz  <ss@cabag.ch>
+	* Version 0.0.3
+	* fixed bug - default option functionality was in the wrong place
+
+2010-07-08 Sonja Scholz  <ss@cabag.ch>
+	* Version 0.0.2
+	* change checkboxes to select box to choose which database should be searched
+
+2010-06-08 Sonja Scholz  <ss@cabag.ch>
+	* Version 0.0.1
+	* initial code generated with kickstarter
