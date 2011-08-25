@@ -58,6 +58,8 @@ class tx_t3notessearch_cabagphpproxy {
 	 * @return	resource	modified data
 	 */
 	function processData($data,$dataAdditionalInfos) {
+		$this->extConf = unserialize($GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf']['t3notes_search']);
+		
 		// replace link addresses and image paths in the return data
 		if((stristr($dataAdditionalInfos['content_type'], 'application') === false)) {
 			// get list of HTML attributes to replace from extension configuration
@@ -71,11 +73,14 @@ class tx_t3notessearch_cabagphpproxy {
 		// add checkboxes to choose the searchable databases
 		$checkboxes = tx_t3notessearch_cabagphpproxy::getSearchableCheckboxes();
 		
-		if(strlen($data) == 0) {
+		if(strlen($data) == 0 && !empty($_POST[$this->extConf['searchDatabaseVariable'].'1']) && $_POST[$this->extConf['searchDatabaseVariable'].'1'] != 't3notes_searchNothing' && $dataAdditionalInfos['http_code'] != '200') {
+			$data = '';
+		} elseif(strlen($data) == 0) {
+			// curl request failed - server is probably unreachable
 			$data = '<span>noresultcount</span><br />'.$checkboxes;
 		} else {
 			$data = preg_replace('/^(\<span\>[^\<]*\<\/span\>\<br \/\>)(.*)$/is','$1'.$checkboxes.'$2' , $data);
-		}
+		}  
 		
 		return $data;
 	}
